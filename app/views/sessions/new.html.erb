@@ -1,0 +1,21 @@
+<head>
+  <title>Login | Ruby on Rails Tutorial Myrails App</title>
+</head>
+<body>
+<div class="col-md-6">
+<% if !flash[:alert].nil? %><div class="alert alert-danger"><%=flash[:alert]%><%=flash[:alert]=nil%></div><%end%>
+<h1>Log in</h1>
+<%= form_for(:session,url:login_path,class:"form-group") do |f| %>
+
+  <%=f.label :"email  *"%>
+  <%=f.text_field :email,class:"form-control"%>
+
+  <%=f.label :"password  *"%>
+  <%=f.password_field :password,class:"form-control"%>
+
+  <%=f.submit "Login",class:"btn btn-success"%>
+<%end%><br>
+<pre>You don't have account? then <%= link_to "Sign up now!", signup_path %></pre>
+</div>
+
+</body>
