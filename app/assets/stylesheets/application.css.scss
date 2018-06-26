@@ -14,3 +14,61 @@
  *= require_self
  */
  @import "bootstrap";
+
+ body {
+  padding-top: 80px;
+}
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+h1{
+  text-align: center;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/*Header logo css*/
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.col-md-6{
+  float:right;
+  border-top: 1px solid green;
+
+}
+input{
+  margin-bottom: 15px;
+  width:100%;
+}
+
+/*error messages css*/
+.error_messages{
+  color:red;
+}
+.field_with_errors{
+  background-color: white;
+  @extend .has-error;
+.form-control {
+  color: $state-danger-text;
+}
+}
