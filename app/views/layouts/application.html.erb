@@ -7,9 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+    a:hover{
+      color:white;
+      text-decoration: none;
+    }
+    </Style>
   </head>
 
   <body>
+    <header>
+    <nav class="navbar navbar-inverse">
+            <div class=container>
+          <ul class="nav navbar-header navbar-nav navbar-left">
+            <li><h3><%= link_to "Myrails app",root_path%></h3></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", static_pages_home_path %></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+            <li><%= link_to "Help", static_pages_help_path %></li>
+          </ul>
+          </div>
+    </nav>
+
+  </header>
+    <div class=container>
     <%= yield %>
+  </div>
   </body>
 </html>
