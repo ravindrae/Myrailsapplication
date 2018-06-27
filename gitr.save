@@ -1,0 +1,6 @@
+echo "# Myrailsapplication" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin httgit push -u origin masteps://github.com/ravindrae/Myrailsapplication.git
+git push -u origin master
