@@ -3,7 +3,6 @@ require 'test_helper'
 class MicropostTest < ActiveSupport::TestCase
 
   def setup
-
     @micropost = Micropost.new(content: "First text", user_id:2)
   end
 

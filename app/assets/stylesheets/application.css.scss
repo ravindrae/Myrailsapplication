@@ -117,11 +117,12 @@ input{
 
 /*showing microposts*/
 .microposts {
+  border-top:2px solid black;
   list-style: none;
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+
     a:hover{
       background-color: white;
       color:black;
@@ -187,6 +188,7 @@ input{
     font-size:15px;
     text-decoration: none;
   }
+  
 }
 
 .btn-default{
