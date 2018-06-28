@@ -1,13 +1,12 @@
 <li id="micropost-<%= micropost.id %>">
   <%= image_tag  micropost.user.gravatar_url,class:"col-sm-2"%>
-  <div class="col-sm-8">
+  <div class="col-sm-10">
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span><br>
   <span class="content"><%= micropost.content %></span><br>
   <span class="timestamp">Posted <%= time_ago_in_words(micropost.created_at) %> ago.<br>
-    <% if current_user==(micropost.user) %>
-  <%= link_to "delete", micropost, method: :delete,data: { confirm: "You sure?" } %>
-<% end %>
+  <% if current_user==micropost.user || current_user.admin? %>
+    <%= link_to "delete", micropost, method: :delete,data: { confirm: "You sure?" } %>
+  <% end %>
   </span>
   </div>
 </li>
-<br/><br/></br><br/>

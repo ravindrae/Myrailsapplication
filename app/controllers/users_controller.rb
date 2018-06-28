@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index,:edit, :update]
+  before_action :logged_in_user, only: [:index,:edit, :update,:followers,:following]
   before_action :find_user ,only: [:edit,:show,:update,:destroy]
   before_action :correct_user,only:[:edit,:update]
   include SessionsHelper
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
 
-      if @user.update(user_params)
+      if @user.update_attributes(user_params)
         flash[:success]="Profile updated."
         redirect_to @user
       else
@@ -42,12 +42,25 @@ class UsersController < ApplicationController
     @user.destroy
    redirect_to users_path
   end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  
   private
   def user_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
-
-
 
   def correct_user
      unless @user == current_user
@@ -65,4 +78,5 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
+
 end

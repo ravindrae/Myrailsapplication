@@ -1,4 +1,8 @@
-<%=image_tag current_user.gravatar_url%>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
+<div class=col-md-4>
+  <%=image_tag current_user.gravatar_url%>
+</div>
+<div class=col-md-8>
+  <h3><%= current_user.name.capitalize %></h3>
+</div>
+<span><%= link_to "view my profile", current_user ,class:"btn btn-default"%></span><br>
 <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
