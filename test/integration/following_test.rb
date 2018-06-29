@@ -3,7 +3,7 @@ require 'test_helper'
 class FollowingTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:suvarna)
+    @user = users(:ramesh)
     @other = users(:abc)
     log_in_as(@user)
   end

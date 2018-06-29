@@ -9,7 +9,6 @@
 
           <% if logged_in? %>
             <li><%= link_to "Users", users_path%></li>
-
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=current_user.name.upcase%>
                   <span class="caret"></span></a>

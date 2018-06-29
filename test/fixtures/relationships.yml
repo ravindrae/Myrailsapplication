@@ -1,15 +1,15 @@
 one:
-  follower: suvarna
+  follower: ramesh
   followed: lana
 
 two:
-  follower: suvarna
+  follower: ramesh
   followed: malory
 
 three:
   follower: lana
-  followed: suvarna
+  followed: ramesh
 
 four:
   follower: abc
-  followed: suvarna
+  followed: ramesh
